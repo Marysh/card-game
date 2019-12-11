@@ -1,5 +1,6 @@
 body {
-    background-color: #cccccc;
+    background-color: #c7c0ae;
+    text-align: center;
 }
 
 .d-flex {
@@ -18,6 +19,10 @@ body {
     align-items: center;
 }
 
+.justify-center {
+    justify-content: center;
+}
+
 .cards-wrapper {
     max-width: 1000px;
     width: 100%;
@@ -28,27 +33,75 @@ body {
 .result {
     padding: 50px;
     max-width: 1000px;
+    margin: 0 auto;
+}
+
+.result > div {
     width: 100%;
+    margin-bottom: 40px;
 }
 
 .card {
+    display: flex;
     width: 27%;
     height: 350px;
-    background-color: #ffffff;
     box-shadow: 0 0 7px 1px #000000;
     margin-bottom: 40px;
-    transition: background 0.4s;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: transform .7s;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    background: url('https://tesera.ru/images/items/174993/810xm/photo.jpg') center no-repeat;
 }
 
-.card.front-side {
+.card-opened {
+    transform: rotateY(0);
+}
+
+.card-content {
+    position: absolute;
+    backface-visibility: hidden;
+    height: 100%;
+}
+
+.card-content.front-side {
     background: #444444;
+}
+
+.card-content.front-side img {
+    display: block;
+}
+
+.card-content.back-side {
+    background: black;
+}
+
+.card img {
+    display: none;
+}
+
+.img-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .btn {
     height: 40px;
     width: 100px;
 }
+
+
+/*@keyframes rotateCard {*/
+/*    from {*/
+/*        transform: rotateY(0deg);*/
+/*    }*/
+/*    to {*/
+/*        transform: rotateY(180deg);*/
+/*    }*/
+/*}*/
